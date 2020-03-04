@@ -1,12 +1,10 @@
--- * DDL (Data Definition Language
--- * command: create, alter, drop
 drop database if exists vk;
 create database vk;
 use vk;
 
 drop table if exists users;
 create table users (
-	id SERIAL primary key,  -- BIGint unsigned not null auto_increment unique
+	id SERIAL primary key,
 	firstname varchar(100),
 	lastname varchar(100),
 	email varchar(150) unique,
