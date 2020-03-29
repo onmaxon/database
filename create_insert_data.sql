@@ -38,29 +38,29 @@ drop table if exists profiles;
 create table profiles (
 	user_id SERIAL primary key,
 	gender CHAR(1),
-	birtday DATE,
+	birthday DATE,
 	photo_id BIGINT UNSIGNED null,
 	hometown VARCHAR(100),
 	created_at DATETIME default now()
 );
 
-INSERT INTO profiles (`user_id`, `gender`, `birtday`, `photo_id`, `hometown`, `created_at`)
+INSERT INTO profiles (`user_id`, `gender`, `birthday`, `photo_id`, `hometown`, `created_at`)
 VALUES
-('1', NULL, '2004-05-28', '1', NULL, '2006-09-08 15:29:12'),
-('2', NULL, '2005-05-10', '2', NULL, '1982-10-04 11:13:10'),
-('3', NULL, '1996-08-18', '3', NULL, '1973-08-23 20:52:04'),
-('4', NULL, '1981-09-30', '4', NULL, '1983-11-23 19:50:03'),
-('5', NULL, '1970-10-23', '5', NULL, '1981-08-27 07:01:45'),
-('6', NULL, '2006-07-20', '6', NULL, '1982-07-02 11:46:58'),
-('7', NULL, '1993-04-24', '7', NULL, '2008-08-11 06:41:18'),
-('8', NULL, '1990-02-18', '8', NULL, '2007-05-15 20:02:54'),
-('9', NULL, '1994-12-21', '9', NULL, '1974-11-29 20:45:52'),
-('10', NULL, '1980-05-23', '10', NULL, '1980-12-08 21:19:18'),
-('11', NULL, '1997-08-03', '11', NULL, '1994-09-24 08:47:29'),
-('12', NULL, '1978-06-18', '12', NULL, '1983-07-30 22:50:05'),
-('13', NULL, '2011-07-07', '13', NULL, '2000-07-06 15:30:19'),
-('14', NULL, '1993-02-06', '14', NULL, '1971-12-10 09:50:41'),
-('15', NULL, '1997-06-08', '15', NULL, '1985-09-02 00:02:18');
+('1', 'F', '2004-05-28', '1', NULL, '2006-09-08 15:29:12'),
+('2', 'M', '2005-05-10', '2', NULL, '1982-10-04 11:13:10'),
+('3', 'F', '1996-08-18', '3', NULL, '1973-08-23 20:52:04'),
+('4', 'M', '1981-09-30', '4', NULL, '1983-11-23 19:50:03'),
+('5', 'F', '1970-10-23', '5', NULL, '1981-08-27 07:01:45'),
+('6', 'F', '2006-07-20', '6', NULL, '1982-07-02 11:46:58'),
+('7', 'M', '1993-04-24', '7', NULL, '2008-08-11 06:41:18'),
+('8', 'F', '1990-02-18', '8', NULL, '2007-05-15 20:02:54'),
+('9', 'F', '1994-12-21', '9', NULL, '1974-11-29 20:45:52'),
+('10', 'M', '1980-05-23', '10', NULL, '1980-12-08 21:19:18'),
+('11', 'F', '1997-08-03', '11', NULL, '1994-09-24 08:47:29'),
+('12', 'F', '1978-06-18', '12', NULL, '1983-07-30 22:50:05'),
+('13', 'M', '2011-07-07', '13', NULL, '2000-07-06 15:30:19'),
+('14', 'F', '1993-02-06', '14', NULL, '1971-12-10 09:50:41'),
+('15', 'M', '1997-06-08', '15', NULL, '1985-09-02 00:02:18');
 
 alter table profiles
 add constraint fk_user_id
@@ -88,11 +88,11 @@ create table messages (
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `body`, `created_at`)
 VALUES
 ('1', '1', '2', 'Velit eligendi incidunt maiores quibusdam nihil sit culpa excepturi. Excepturi aspernatur assumenda corrupti quam. In quibusdam nisi id impedit qui.', '1977-06-05 00:14:48'),
-('2', '2', '1', 'Iure repellendus minima enim nihil illum. Sunt qui aut deserunt blanditiis. Architecto ratione commodi error nemo.', '2013-11-27 04:04:15'),
-('3', '3', '5', 'Rem inventore voluptas et veniam. Pariatur in autem qui non autem. Beatae alias dignissimos ut quibusdam qui quaerat qui aliquam. Velit repellendus ut est omnis.', '3000-12-19 16:40:31'),
-('4', '4', '6', 'Ex laudantium vel similique eveniet hic inventore ut. Doloremque repellendus recusandae similique aut modi ullam. Doloremque qui cupiditate error omnis assumenda minus. Sequi quae voluptas est quis est.', '2011-09-26 23:29:53'),
-('5', '5', '3', 'Enim nihil eius quae vel molestiae laudantium. Nemo magnam repellat est. Consequatur ipsa dicta sapiente quaerat explicabo sequi recusandae. Consequatur enim consequuntur saepe qui hic sapiente.', '1987-06-22 10:53:47'),
-('6', '6', '1', 'Fugit autem tempora vel consequatur. Corrupti est dicta expedita. Fugiat eveniet dolorum rerum. Quo dolorem maxime totam molestiae quod.', '2018-06-02 05:31:48'),
+('2', '1', '2', 'Iure repellendus minima enim nihil illum. Sunt qui aut deserunt blanditiis. Architecto ratione commodi error nemo.', '2013-11-27 04:04:15'),
+('3', '2', '1', 'Rem inventore voluptas et veniam. Pariatur in autem qui non autem. Beatae alias dignissimos ut quibusdam qui quaerat qui aliquam. Velit repellendus ut est omnis.', '3000-12-19 16:40:31'),
+('4', '2', '1', 'Ex laudantium vel similique eveniet hic inventore ut. Doloremque repellendus recusandae similique aut modi ullam. Doloremque qui cupiditate error omnis assumenda minus. Sequi quae voluptas est quis est.', '2011-09-26 23:29:53'),
+('5', '5', '1', 'Enim nihil eius quae vel molestiae laudantium. Nemo magnam repellat est. Consequatur ipsa dicta sapiente quaerat explicabo sequi recusandae. Consequatur enim consequuntur saepe qui hic sapiente.', '1987-06-22 10:53:47'),
+('6', '2', '1', 'Fugit autem tempora vel consequatur. Corrupti est dicta expedita. Fugiat eveniet dolorum rerum. Quo dolorem maxime totam molestiae quod.', '2018-06-02 05:31:48'),
 ('7', '7', '4', 'Incidunt eum qui voluptas alias amet. Impedit hic et ipsa ad incidunt. Accusamus et aut omnis nihil. Sint et omnis non quia fuga ex deleniti. Ut voluptatum dolor animi animi.', '2015-09-15 22:55:35'),
 ('8', '8', '3', 'Ut distinctio aut id illo saepe rem. Eveniet molestias eaque dolore. Autem architecto rerum consequatur sunt earum sit id quis. Repudiandae voluptatem consequuntur voluptatem eum dicta commodi.', '2034-04-20 16:14:33'),
 ('9', '8', '9', 'Quo aut modi numquam sed qui. Quos et nihil aperiam neque quos asperiores voluptate. Dolores ipsam veritatis sit voluptates deserunt repudiandae culpa.', '2004-06-11 06:19:34'),
@@ -252,30 +252,29 @@ VALUES
 ('14', '14', '14', 'In blanditiis est expedita ipsam corrupti tempora sit reprehenderit. Cum ullam autem officiis quis modi adipisci tempore. Placeat distinctio iusto voluptas.', 'a', 41265047, NULL, '1978-09-07 06:04:52', '1981-02-02 15:18:27'),
 ('15', '15', '15', 'Molestiae voluptatem sequi ex ipsam cumque sequi similique. Distinctio et ratione sint. Assumenda vitae sed qui. Ut quo aut sint quo omnis.', 'non', 22, NULL, '1992-08-31 15:58:20', '1992-03-05 23:05:23');
 
-drop table if exists likes;
-create table likes (
-	id SERIAL primary key,
-	user_id BIGINT UNSIGNED not null,
-	media_id BIGINT UNSIGNED not null,
-	created_at DATETIME default now()
-
-	-- index (user_id),
-	-- foreign key (user_id) references users(id),
+DROP TABLE IF EXISTS likes;
+CREATE TABLE likes(
+	id SERIAL PRIMARY KEY,
+    user_id BIGINT UNSIGNED NOT NULL,
+    media_id BIGINT UNSIGNED NOT NULL,
+    created_at DATETIME DEFAULT NOW()
+    , FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE restrict
+    , FOREIGN KEY (media_id) REFERENCES media(id)
 );
 
 INSERT INTO `likes` (`id`, `user_id`, `media_id`, `created_at`)
 VALUES
 ('1', '1', '1', '1972-06-22 10:31:25'),
-('2', '2', '2', '1992-09-09 14:35:13'),
-('3', '3', '3', '1971-09-22 01:09:41'),
-('4', '4', '4', '2004-11-14 23:01:18'),
+('2', '1', '2', '1992-09-09 14:35:13'),
+('3', '1', '3', '1971-09-22 01:09:41'),
+('4', '1', '4', '2004-11-14 23:01:18'),
 ('5', '5', '5', '2019-06-15 05:15:46'),
 ('6', '6', '6', '2019-11-19 22:33:23'),
 ('7', '7', '7', '2007-06-30 20:29:31'),
 ('8', '8', '8', '1995-07-31 10:11:30'),
 ('9', '9', '9', '2008-05-28 16:33:08'),
 ('10', '10', '10', '1996-07-07 22:48:01'),
-('11', '11', '11', '1999-01-11 13:00:39'),
+('11', '11', '13', '1999-01-11 13:00:39'),
 ('12', '12', '12', '1994-01-31 19:42:56'),
 ('13', '13', '13', '2019-01-16 02:33:24'),
 ('14', '14', '14', '2017-05-31 09:21:27'),
